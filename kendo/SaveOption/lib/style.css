@@ -1,0 +1,32 @@
+.option-group-item-label {
+    float: right;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    /*width: 102px;*/
+    margin-bottom: 0px;
+}
+
+    .option-group-item-label:hover {
+        background-color: #C4DDEC;
+        border-radius: 3px;
+        border: 1px solid #0082B3;
+        padding-right: 5px;
+        padding-left: 5px;
+        /*width: 103px;*/
+        height: 18px;
+    }
+
+.dropdown-menu {
+    /*min-width: 200px;*/
+    overflow:auto
+}
+
+.k-icon .k-i-check .option-item-check {
+    float: left;
+    margin-left: 10px;
+}
+.option-item-delete {
+    float: right;
+    cursor: pointer !important;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- https://cdnjs.com/libraries/twitter-bootstrap/2.3.1 -->
+    <title>Save Dialog</title>
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.common.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.blueopal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css"
+      integrity="sha512-zWCeqKBv5UtLH/diZhYykNvmkl+JfIbeIHk0kVqDmiPJeiQU8hHyoyYGNupcw/IUZYP9siwdie+2Hj18PF6RfA=="
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script src="https://kendo.cdn.telerik.com/2020.2.617/js/kendo.all.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"
+      integrity="sha512-ewKs4dUr3NjhQ33eESOd58BiwcAlcf3D0+KKdVd5tTvdHipkqm4LQ6kJJpztA+YexBIGFXeSVBc7KQlNHzCkDw=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="lib/eeecompli.optiongroup.js"></script>
+
+    <link rel="stylesheet" href="lib/style.css" />
+  </head>
+
+  <body>
+    <!-- https://stackoverflow.com/questions/20092074/input-text-box-width-same-as-parent -->
+
+    <script id="Send-Email-Content" type="text/x-kendo-template">
+      <div id="EmailContent">
+              <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span2">To:</div>
+                    <div class="span10"> <input type="text" id="emailto" name="emailto" style="width:100%;"></div>
+                </div>
+                 <div class="row-fluid">
+                    <div class="span2">Subject:</div>
+                     <div class="span10"> <input type="text" id="emailsubject" name="emailsubject" style="width:100%;"></div>
+                </div>
+
+                 <div class="row-fluid">
+                    <div class="span2">Message:</div>
+                    <div class="span10">
+                    <textarea rows="20" style="width: 100%; max-width: 100%;"></textarea>
+                </div>
+              </div>
+
+            <hr><br/>
+            <button class="save-ok k-button btn pull-right">OK</button>
+      </div>
+    </script>
+
+    <script id="Save-Option-Content" type="text/x-kendo-template">
+      <div id="SaveOptionContent">
+              <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span3">New Search Name:</div>
+                    <div class="span9"> <input type="text" id="newFileName" name="newFileName" data-bind="value: selectedSearchName" style="width:100%;"></div>
+                </div>
+                 <div class="row-fluid">
+                    <div class="span3">Exist Search Name:</div>
+                     <div class="span9">
+                     <select id="nameList" style="width:100%;"
+                      data-role="listbox"
+                      data-text-field="name"
+                      data-value-field="value"
+                      data-bind="source: items,
+                      events: {
+                          change: change
+                      }">
+                    </select>
+                     </div>
+                </div>
+              </div>
+            <hr><br/>
+            <button class="save-cancel k-button btn pull-right">Cancel</button>
+            <button class="save-ok k-button btn pull-right" style="margin-right: 5px;">OK</button>
+      </div>
+    </script>
+    <div id="searchTitleOptionDiv">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <h4>Sample Save Dialog</h4>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12">
+            <div id="optionGroupTest" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="example">
+      <div>
+        <select
+          id="listbin"
+          data-role="listbox"
+          data-text-field="name"
+          data-value-field="value"
+          data-bind="source: items,
+                    events: {
+                        change: change,
+                        dataBound: dataBound,
+                        reorder: reorder,
+                        remove: remove
+                    }"
+        ></select>
+      </div>
+    </div>
+    <script src="lib/script.js"></script>
+  </body>
+</html>
